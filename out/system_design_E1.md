@@ -217,7 +217,9 @@ The last three reviewers each raised different issues. These are built into the 
 
 ## 10. Verify before you commit
 
-- Read the Wanderland paper PDF (does it include real-robot runs?), arXiv 2610.00731 ("Measuring Asset and Scene Reconstruction Effects in Real-to-Sim Robot Evaluation"), and NavDP's real-world-consistency claim. The reviser couldn't open these, and if any of them already ran this study, the novelty changes.
+- **Done (see [round3/prior_work_check.md](round3/prior_work_check.md)):** the Kaedim reconstruction-fidelity paper (very likely arXiv 2610.00731) and NavDP v3 were read in full. Neither covers capture height, policy-output divergence or a real-vs-real floor, so E1's claims stay open. Reframe E1 as the single-factor, low-viewpoint navigation counterpart to the Kaedim study, and do not cite NavDP for real-to-sim consistency (that sentence isn't in v3).
+- **Still to read:** the Wanderland paper PDF (does it include real-robot runs?).
 - Check licenses: CityWalker, LogoNav and S2E code and weights, gsplat (Apache-2.0), slam_toolbox (LGPL-2.1).
 - Confirm the hoverboard's mainboard chip (STM32F103 / GD32F103) before buying.
 - Confirm the Jetson runs CityWalker at ≥ 1 Hz (test on Colab first, then on the device).
+- Borrow from the Kaedim paper: its agreement measures and paired-on-cell bootstrap for the closed-loop analysis, and a configuration gate that rejects any run whose camera height or settings drifted.
