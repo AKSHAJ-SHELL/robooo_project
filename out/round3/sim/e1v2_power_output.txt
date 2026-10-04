@@ -1,0 +1,27 @@
+H1 open-loop divergence: one-sided alpha=0.05, 2 policies, frames AR(1) rho=0.9
+delta=log(D_TH/D_TR). Assumed s_rc=0.15, s_sc=0.10 (heterogeneity of the height effect)
+  routes= 8 sites=4 ratio=1.00: naive-frame=0.37 route-t=0.06 site-perm=0.00 both-policies(route-t)=0.01
+  routes= 8 sites=4 ratio=1.11: naive-frame=0.76 route-t=0.29 site-perm=0.00 both-policies(route-t)=0.08
+  routes= 8 sites=4 ratio=1.16: naive-frame=0.89 route-t=0.46 site-perm=0.00 both-policies(route-t)=0.17
+  routes= 8 sites=4 ratio=1.22: naive-frame=0.96 route-t=0.65 site-perm=0.00 both-policies(route-t)=0.31
+  routes= 8 sites=4 ratio=1.35: naive-frame=1.00 route-t=0.91 site-perm=0.00 both-policies(route-t)=0.64
+  routes=14 sites=6 ratio=1.00: naive-frame=0.37 route-t=0.06 site-perm=0.03 both-policies(route-t)=0.01
+  routes=14 sites=6 ratio=1.11: naive-frame=0.85 route-t=0.41 site-perm=0.21 both-policies(route-t)=0.15
+  routes=14 sites=6 ratio=1.16: naive-frame=0.95 route-t=0.65 site-perm=0.40 both-policies(route-t)=0.33
+  routes=14 sites=6 ratio=1.22: naive-frame=0.99 route-t=0.85 site-perm=0.60 both-policies(route-t)=0.57
+  routes=14 sites=6 ratio=1.35: naive-frame=1.00 route-t=0.99 site-perm=0.90 both-policies(route-t)=0.91
+  routes=16 sites=8 ratio=1.00: naive-frame=0.39 route-t=0.06 site-perm=0.04 both-policies(route-t)=0.01
+  routes=16 sites=8 ratio=1.11: naive-frame=0.87 route-t=0.45 site-perm=0.33 both-policies(route-t)=0.18
+  routes=16 sites=8 ratio=1.16: naive-frame=0.96 route-t=0.71 site-perm=0.58 both-policies(route-t)=0.37
+  routes=16 sites=8 ratio=1.22: naive-frame=1.00 route-t=0.91 site-perm=0.82 both-policies(route-t)=0.65
+  routes=16 sites=8 ratio=1.35: naive-frame=1.00 route-t=1.00 site-perm=0.99 both-policies(route-t)=0.95
+
+C1 closed-loop |twin-real| gap, T_H vs T_R (route-clustered paired t, one-sided 0.05)
+  v1 extra-SD(T_H)=0.00: naive-episode=0.09 route-clustered=0.05  SRCC(T_R) 95% range=[0.49,0.92]
+  v1 extra-SD(T_H)=0.05: naive-episode=0.49 route-clustered=0.29  SRCC(T_R) 95% range=[0.50,0.92]
+  v1 extra-SD(T_H)=0.10: naive-episode=0.83 route-clustered=0.60  SRCC(T_R) 95% range=[0.49,0.92]
+  v1 extra-SD(T_H)=0.15: naive-episode=0.95 route-clustered=0.81  SRCC(T_R) 95% range=[0.49,0.93]
+  v2 extra-SD(T_H)=0.00: naive-episode=0.04 route-clustered=0.05  SRCC(T_R) 95% range=[0.55,0.88] median reliability of 2-run real mean=0.84
+  v2 extra-SD(T_H)=0.05: naive-episode=0.41 route-clustered=0.37  SRCC(T_R) 95% range=[0.55,0.89] median reliability of 2-run real mean=0.84
+  v2 extra-SD(T_H)=0.10: naive-episode=0.80 route-clustered=0.78  SRCC(T_R) 95% range=[0.58,0.89] median reliability of 2-run real mean=0.84
+  v2 extra-SD(T_H)=0.15: naive-episode=0.96 route-clustered=0.95  SRCC(T_R) 95% range=[0.54,0.89] median reliability of 2-run real mean=0.84
