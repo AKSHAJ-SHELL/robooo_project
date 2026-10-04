@@ -7,7 +7,7 @@ than robot-height twins (T_R).  Data: frames nested in drives, routes, sites.
 
 C1 (confirmatory, closed-loop): the |twin - real| gap in a continuous closed-loop outcome is
 larger for T_H than T_R.  Compares the v1 design (8 routes x 3 starts, no retest) with the
-v2 design (14 routes x 1 start x 2 real repeats).
+v2 design (16 routes at 8 sites x 1 start x 2 real repeats).
 
 Run: python3 e1v2_power.py
 """
@@ -87,7 +87,7 @@ def run_h1():
 
 
 # ---------------- C1: closed-loop gap ----------------
-def sim_c1(design, delta_sd, n_sites=6, s_noise=0.10, s_R=0.10, s_cell=0.15):
+def sim_c1(design, delta_sd, n_sites=8, s_noise=0.10, s_R=0.10, s_cell=0.15):
     """Outcome y = route progress / trajectory score on a continuous scale (SD of cell means
     ~ s_cell).  Real run noise s_noise (test-retest).  Twin discrepancy SD s_R for T_R and
     s_R + delta_sd for T_H (cell-level, shared across starts in the same route x policy).
@@ -96,7 +96,7 @@ def sim_c1(design, delta_sd, n_sites=6, s_noise=0.10, s_R=0.10, s_cell=0.15):
         n_routes, n_starts, n_rep = 8, 3, 1
         n_sites = 4
     else:
-        n_routes, n_starts, n_rep = 14, 1, 2
+        n_routes, n_starts, n_rep = 16, 1, 2
     n_pol = 2
     site = sites_for(n_routes, n_sites)
     cell = rng.normal(0, s_cell, (n_routes, n_pol))
