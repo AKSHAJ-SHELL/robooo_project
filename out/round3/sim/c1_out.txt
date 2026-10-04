@@ -2,3 +2,6 @@
 C1 closed-loop |twin-real| gap, T_H vs T_R (route-clustered paired t, one-sided 0.05)
   v1 extra-SD(T_H)=0.00: naive-episode=0.09 route-clustered=0.05  SRCC(T_R) 95% range=[0.50,0.92]
   v1 extra-SD(T_H)=0.05: naive-episode=0.49 route-clustered=0.27  SRCC(T_R) 95% range=[0.49,0.92]
+  v1 extra-SD(T_H)=0.10: naive-episode=0.83 route-clustered=0.59  SRCC(T_R) 95% range=[0.47,0.92]
+  v1 extra-SD(T_H)=0.15: naive-episode=0.96 route-clustered=0.81  SRCC(T_R) 95% range=[0.50,0.93]
+  v2 extra-SD(T_H)=0.00: naive-episode=0.04 route-clustered=0.04  SRCC(T_R) 95% range=[0.57,0.88] median reliability of 2-run real mean=0.84
