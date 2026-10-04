@@ -1,5 +1,11 @@
 # Round 3 brief (shared by generators and reviewers)
 
+## Priority (from the user, round 3)
+- IMPACT FIRST. The goal is a result other labs, companies or communities would actually use or cite.
+- Novelty must still be real: a reviewer should think "there's something here worth reading."
+- "Cheaper" is not the contribution. Low cost can enable the work (e.g. many sites, many robots, open release) but must not be the headline.
+- The project can change scope. It does not need to stay on the bin robot.
+
 ## Team and constraints
 - Two high-school students in California: one mechanical, one perception/software. Part-time (school year).
 - Timeline: start mid-Oct 2026; parts ordered by mid-Nov; first data by Dec 20; go/no-go Jan 15; data freeze Feb 14; submit ~Feb 26 for IEEE CASE 2027 or IROS 2027 (both due Mar 1, 2027). ICRA 2027 workshops (spring) are the fallback.
