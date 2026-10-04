@@ -36,3 +36,22 @@ Two of the three "verify before you commit" papers were read in full from text t
 - The narrow claims (capture-height manipulation at 30 cm; policy-output divergence vs image metrics against a real-vs-real floor; SRCC for sidewalk navigation models with test-retest) are **still open** after both papers.
 - Framing must change: E1 is no longer the only "reconstruction choices affect sim-real agreement" study. Position it as the **single-factor, navigation, low-viewpoint** counterpart to the Kaedim study's all-at-once manipulation comparison.
 - Still unread: the **Wanderland** paper PDF (does it include real-robot runs?).
+
+## 3. Wanderland (arXiv 2511.20620 v2, CVPR 2026), read in full
+
+**What it does.** Captures 530 indoor/outdoor urban scenes (NYC, Jersey City) with a handheld MetaCam scanner: Livox Mid-360 lidar, IMU, RTK-GNSS and two fisheye cameras at 1 FPS. LIV-SLAM gives metric poses and point clouds; 3DGS is initialized from the point cloud and trained with a depth loss; collision meshes come from the lidar cloud; everything runs in Isaac Sim. It shows that vision-only pipelines (Vid2Sim, GaussGym, COLMAP, VGGT and others) give worse poses, meshes and novel views, and that policies trained or evaluated in Vid2Sim-style environments behave differently from ones in Wanderland environments.
+
+**The key question: did it run a real robot? No.** Every navigation result (Tables 4–5, Fig. 7) is in simulation. "Evaluation reliability" is argued by comparing two simulators to each other: all policies score lower success and more interventions in Vid2Sim-built environments than in Wanderland's. There is no real-robot ground truth, no sim-vs-real correlation and no SRCC, even though it cites Kadian et al. [61]. Which simulator is closer to reality is never measured.
+
+**Other facts relevant to E1.v2:**
+- **Camera/capture height is never varied or discussed.** The scanner is handheld (roughly human height). The paper doesn't state the simulated agent's camera height; the released code puts it at about 1.1 m (checked earlier).
+- **Extrapolated views degrade.** The paper's own motivation is that rendering quality drops for viewpoints away from the capture path, and it holds out "extrapolation trajectories" to measure this. But its extrapolation views come from the same handheld device. A 30 cm robot camera is exactly this kind of extrapolation, in the vertical direction, which the paper doesn't test.
+- **Image metrics disagree with each other.** On extrapolated views (Table 3), Vid2Sim has *better* LPIPS than Wanderland (0.371 vs 0.445) but worse PSNR (16.49 vs 17.92). Fig. 6 then argues qualitatively that Vid2Sim's DINOv3 features diverge from the real image, which "can confuse end-to-end navigation policies that rely on DINO features" such as CityWalker. That is an untested claim, and it's exactly E1's co-primary question: do image metrics predict how much the policy's output moves?
+- **Same policies as E1.** It benchmarks CityWalker and MBRA (the LogoNav paper) zero-shot. Outdoor success is low (SR 0.21 and 0.22, Table 5). Warning for E1: expect weak closed-loop performance, which is why the open-loop divergence D is the primary result and the October floor check matters.
+
+## Net effect on E1.v2 after all three papers
+
+- **E1's central gap is confirmed.** None of the three papers runs a real robot against a splat twin for navigation, varies capture height, or tests image metrics against policy-output divergence. Wanderland, the closest navigation paper, argues reliability only sim-vs-sim.
+- **Sharper pitch for the paper:** "Wanderland shows that phone/video twins and lidar-grounded twins give different navigation scores, but never checks either against a real robot. The Kaedim study checks against a real robot, for manipulation, changing everything at once. We test one factor, capture height, for a 30 cm navigation robot, against real runs, and ask whether the image metrics these papers report (PSNR/SSIM/LPIPS/DINO) predict policy-output divergence."
+- **Use Wanderland's own numbers as motivation:** its LPIPS-vs-PSNR disagreement on extrapolated views and its untested DINOv3 claim.
+- **No remaining "verify before you commit" papers.** Residual risk is only papers published after these; repeat a Scholar search for "real-to-sim navigation evaluation Gaussian splatting real robot" before submission.
