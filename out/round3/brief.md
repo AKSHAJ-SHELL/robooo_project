@@ -5,6 +5,7 @@
 - Novelty must still be real: a reviewer should think "there's something here worth reading."
 - "Cheaper" is not the contribution. Low cost can enable the work (e.g. many sites, many robots, open release) but must not be the headline.
 - The project can change scope. It does not need to stay on the bin robot.
+- LAB APPEAL: a nearby university lab should WANT to help (advise, lend equipment, co-author). The idea should plug into an active research line of a reachable lab, so helping costs them little and gives them something (data, a test, a result for their own work). Reachable labs (details in out/labs.md): UCSC Autonomous Systems Lab (Elkaim; Pi + ROS 2 + Nav2 ground robots, open-source low-cost autonomy, HS mentoring via SIP) and UCSC SIP hosts Kobayashi (off-road UGV traversability), Sanfelice, Fremont (robustness/RL for autonomy); UC Merced Robotics Lab (Carpin; outdoor/agricultural ROS 2 navigation, multi-robot, CASE); Santa Clara Robotic Systems Lab (Kitts; field rovers, multi-robot, low-cost devices); UCLA LEMUR (Mehta; cheap printable robots, lidar odometry, multi-robot localization); SJSU Wencen Wu (multi-robot sensing, autonomous parking vehicle, cooperative perception); SJSU Winncy Du (sensors, mechatronics). Each idea must name the 1-2 best-fit labs, the specific paper/project of theirs it connects to, and what the lab gains.
 
 ## Team and constraints
 - Two high-school students in California: one mechanical, one perception/software. Part-time (school year).
